@@ -76,9 +76,4 @@ alter table TABLE_NAME add COLUMN_NAME DATA_TYPE;
 
 
 
-
-
-
-
-
 LINK - http://www.galaxy.agh.edu.pl/~pamalino/programowanie/mysql/index.php
