@@ -75,34 +75,10 @@ alter table TABLE_NAME add COLUMN_NAME DATA_TYPE;
 ```
 
 
- 
 
 
 
-## ZADANIA
 
-```
-create table produkty(id int auto_increment primary key, nazwa varchar(45), jednostka varchar(15),cena float, opis TEXT);
-create table zamowienie(id int auto_increment primary key, idProdukt varchar(25), ilosc float, idKlient varchar(10));
-create database zamowienie(ID int auto_increment primary key, idklient INT, ilosc FLOAT, idproudkt INT);
-insert into omatko  values(1, "twoja", "stara", "2115");
-
-
-create table samochod(ID INT AUTO_INCREMENT PRIAMRY KEY, marka varchar(20), model varchar(20), rok varchar(4), kolor varchar(20), pojemnosc varchar (20));
-
-
-select * from samochod where pojemnosc>1000;
-select * from samochod where kolor like "czarny";
-insert into samochod values(4, "mercedes", "baleron", "1993", "czarny", "5000");
-
-
-
-ALTER TABLE osoby ADD samochod INT;
-ALTER TABLE osoby ADD samochod INT;
-
-select imie,nazwisko,marka,model from osoby INNER JOIN samochod ON osoby.samochod=samochod.id;
-select imie,nazwisko,marka,model from osoby, samochod where osoby.samochod=samochod.id;
-```
 
 
 LINK - http://www.galaxy.agh.edu.pl/~pamalino/programowanie/mysql/index.php
