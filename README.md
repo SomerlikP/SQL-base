@@ -103,3 +103,6 @@ ALTER TABLE osoby ADD samochod INT;
 select imie,nazwisko,marka,model from osoby INNER JOIN samochod ON osoby.samochod=samochod.id;
 select imie,nazwisko,marka,model from osoby, samochod where osoby.samochod=samochod.id;
 ```
+
+
+LINK - http://www.galaxy.agh.edu.pl/~pamalino/programowanie/mysql/index.php
