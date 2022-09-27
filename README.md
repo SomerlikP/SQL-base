@@ -5,36 +5,35 @@ mysql -u root
 ```
 
 
-Utworzenie bazy danych
-
+Utworzenie bazy danych:
 ```sql
 create database DATABASE_NAME;
 ```
 
 
-Użycie bazy danych
+Użycie bazy danych:
 ```sql
 use DATABASE_NAME;
 ```
 
 
-Utworzenie tabeli
+Utworzenie tabeli:
 ```sql
 create table TABLE_NAME(id int AUTO_INCREMENT PRIMARY KEY, WARTOŚĆ1 TYPDANYCH(45), WARTOŚĆ2 TYPDANYCH(45), WARTOŚĆ3 TYPDANYCH(45));
 ```
 
 
-Wyświetlenie tabeli
+Wyświetlenie tabeli:
 ```sql
 show tables;
 ```
 
-Wyświetlanie kolumn
+Wyświetlanie kolumn:
 ```sql
 show columns from TABLE_NAME;
 ```
 
-Wprowadzenie danych do tabeli
+Wprowadzenie danych do tabeli:
 ```sql
 insert into TABLE_NAME values(1, WARTOŚĆ1, WARTOŚĆ2, WARTOŚĆ3);
 ```
@@ -47,34 +46,34 @@ insert into TABLE_NAME(WARTOŚĆ1, WARTOŚĆ2) values ("dane1","dane2")
 ```
 > Dzięki tej wersji nie trzeba wpisywać ID ponieważ jest `AUTO_INCREMENT`
 
-Aktualizowanie danych
+Aktualizowanie danych:
 ```sql
 update TABLE_NAME set WARTOŚĆ1=X where id=Y;
 ```
 > X - wartość którą chcemy dodać, Y - wartość dla którego id chcemy zmienić
 
-Wyszukiwanie danych
+Wyszukiwanie danych:
 ```sql
 select * from TABLE_NAME where WARTOŚĆ1 LIKE "X%";
 ```
 > Przykład imienia: Gdy WARTOŚĆ1 jest imieniem, X zastąpić 1 literą imienia
 
-Srednia sprzedaz
+Srednia sprzedaz:
 ```sql
 select avg(rekord_z_tabeli) from tabela;
 ```
 
-Usuwanie tabeli
+Usuwanie tabeli:
 ```sql
 drop table TABLE_NAME;
 ```
 
-Usuwanie bazy danych
+Usuwanie bazy danych:
 ```sql
 drop database DATABASE_NAME;
 ```
 
-Zmienianie tabeli
+Zmienianie tabeli:
 ```sql
 alter table TABLE_NAME add COLUMN_NAME DATA_TYPE;
 ```
