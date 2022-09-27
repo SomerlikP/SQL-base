@@ -59,6 +59,11 @@ select * from TABLE_NAME where WARTOŚĆ1 LIKE "X%";
 ```
 > Przykład imienia: Gdy WARTOŚĆ1 jest imieniem, X zastąpić 1 literą imienia
 
+Srednia sprzedaz
+```sql
+select avg(rekord_z_tabeli) from tabela;
+```
+
 Usuwanie tabeli
 ```sql
 drop table TABLE_NAME;
