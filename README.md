@@ -1,5 +1,4 @@
-#### Logowanie do Shell'a
-
+Logowanie do Shell'a:
 ```sql
 mysql -u root
 ```
