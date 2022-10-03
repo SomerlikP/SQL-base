@@ -79,7 +79,7 @@ alter table TABLE_NAME add COLUMN_NAME DATA_TYPE;
 
 usuwanie tabeli:
 ```sql
-???
+alter table TABLE_NAME drop;
 ```
 
 
