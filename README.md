@@ -34,7 +34,7 @@ show columns from TABLE_NAME;
 
 Wprowadzenie danych do tabeli:
 ```sql
-insert into TABLE_NAME values(1, WARTOŚĆ1, WARTOŚĆ2, WARTOŚĆ3);
+insert into TABLE_NAME values(null, WARTOŚĆ1, WARTOŚĆ2, WARTOŚĆ3);
 ```
 > Wprowadzanie danych według kolejnych wartości wprowadzonych w tabeli
 
