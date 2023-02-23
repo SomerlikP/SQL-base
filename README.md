@@ -202,3 +202,46 @@ Wyświetli daty w tabeli zamowienia sformatowane jako dzień-miesiąc-rok.
 STRUNCATE TABLE zamowienia;
 Usunie wszystkie rekordy z tabeli zamowienia, ale zachowa strukturę tabeli. Uwaga: to polecenie nie może zostać wycofane.
 ```
+
+11. OVER - pozwala na wykonanie obliczeń na grupach wyników, takich jak sumy, średnie, minima, maksima itp:
+```sql
+SELECT kraj, miasto, ilosc, SUM(ilosc) OVER (PARTITION BY kraj) AS 'Suma krajowa'
+FROM klienci;
+Wyświetli dane klientów z tabeli klienci, w tym liczbę klientów w danym mieście, a także sumę klientów w tym samym kraju w dodatkowej kolumnie Suma krajowa.
+```
+
+<br>
+
+12. PIVOT - pozwala na przekształcenie wyników w poziomy układ tabeli:
+```sql
+SELECT * FROM (SELECT kraj, miasto, ilosc FROM klienci) AS t PIVOT (SUM(ilosc) FOR kraj IN ('Polska', 'Niemcy', 'Francja')) AS p;
+Wyświetli dane klientów z tabeli klienci jako poziomą tabelę, gdzie wiersze reprezentują miasta, kolumny reprezentują kraje, a komórki zawierają sumę klientów z danego miasta i kraju.
+```
+
+<br>
+
+13. FULL OUTER JOIN - pozwala na wykonanie łączenia typu FULL OUTER JOIN, które zwraca wyniki z obu tabel, nawet jeśli nie ma żadnych dopasowań:
+```sql
+SELECT p.nazwa, k.nazwa FROM produkty p FULL OUTER JOIN kategorie k ON p.kategoria_id = k.id;
+Wyświetli nazwy produktów i kategorii z tabel produkty i kategorie. Jeśli produkt nie ma przypisanej kategorii, kolumna k.nazwa będzie miała wartość NULL, a jeśli kategoria nie ma żadnych produktów, kolumna p.nazwa będzie miała wartość NULL.
+```
+
+<br>
+
+14. WINDOW FUNCTION - pozwala na wykonanie funkcji okna, które wykonują obliczenia na określonym zakresie wyników:
+```sql
+SELECT nazwa, cena, AVG(cena) OVER (PARTITION BY kategoria_id ORDER BY cena ASC ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS 'Srednia cena'
+FROM produkty;
+Wyświetli nazwy produktów, ceny i średnią cenę dla każdej kategorii produktów z tabeli produkty, w której średnia cena jest obliczana na podstawie ceny produktów w tej samej kategorii, uwzględniając tylko poprzedni i następny wiersz.
+```
+
+<br>
+
+15. TRANSACTION - pozwala na kontrolowanie i zarządzanie transakcjami w bazie danych:
+```sql
+BEGIN TRANSACTION;
+UPDATE konta SET saldo = saldo - 100 WHERE id = 1;
+INSERT INTO transakcje (konto_id, kwota, typ) VALUES (1, 100, 'WYPLATA');
+COMMIT TRANSACTION;
+Wykonuje transakcję, w której najpierw zmniejsza saldo na koncie o 100, a następnie dodaje wpis do tabeli transakcje, reprezentujący wypłatę z konta. Wszystkie operacje są wykonywane razem jako jedna transakcja, a COMMIT TRANSACTION zatwierdza transakcję, wykonując wszystkie zmiany w bazie danych. Jeśli w trakcie transakcji wystąpi błąd lub wyjątek, można ją wycofać za pomocą ROLLBACK TRANSACTION, przywracając bazę danych do stanu przed rozpoczęciem transakcji.
+```
