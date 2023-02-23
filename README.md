@@ -113,3 +113,19 @@ Reset ID:
 2. SET @counter = 0; UPDATE nazwaTabeli SET id = (@counter:=@counter+1);
 3. ALTER TABLE nazwaTablei MODIFY COLUMN id INT NOT NULL AUTO_INCREMENT;
 ```
+
+<br><br>
+
+SELECT DISTINCT - pozwala wyświetlić tylko unikalne wartości dla danej kolumny:
+```sql
+SELECT DISTINCT kraj FROM klienci;
+Wyświetli unikalne wartości kolumny kraj z tabeli klienci.
+```
+
+<br><br>
+
+UNION - pozwala połączyć wyniki z kilku zapytań w jedną tabelę:
+```sql
+SELECT nazwisko FROM pracownicy UNION SELECT nazwisko FROM klienci;
+Wyświetli nazwiska pracowników i klientów w jednej kolumnie.
+```
