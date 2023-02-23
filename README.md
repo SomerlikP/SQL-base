@@ -195,6 +195,7 @@ Wyświetli daty w tabeli zamowienia sformatowane jako dzień-miesiąc-rok.
 <br><br>
 
 10. TRUNCATE - pozwala na usuwanie wszystkich rekordów z tabeli, ale zachowując strukturę tabeli:
+```sql
 STRUNCATE TABLE zamowienia;
 Usunie wszystkie rekordy z tabeli zamowienia, ale zachowa strukturę tabeli. Uwaga: to polecenie nie może zostać wycofane.
 ```
