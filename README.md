@@ -116,7 +116,7 @@ Reset ID:
 
 <br><br>
 
-SELECT DISTINCT - pozwala wyświetlić tylko unikalne wartości dla danej kolumny:
+1. SELECT DISTINCT - pozwala wyświetlić tylko unikalne wartości dla danej kolumny:
 ```sql
 SELECT DISTINCT kraj FROM klienci;
 Wyświetli unikalne wartości kolumny kraj z tabeli klienci.
@@ -124,7 +124,7 @@ Wyświetli unikalne wartości kolumny kraj z tabeli klienci.
 
 <br><br>
 
-UNION - pozwala połączyć wyniki z kilku zapytań w jedną tabelę:
+2. UNION - pozwala połączyć wyniki z kilku zapytań w jedną tabelę:
 ```sql
 SELECT nazwisko FROM pracownicy
 UNION
@@ -134,7 +134,7 @@ Wyświetli nazwiska pracowników i klientów w jednej kolumnie.
 
 <br><br>
 
-GROUP BY - pozwala grupować wyniki według wartości w danej kolumnie:
+3. GROUP BY - pozwala grupować wyniki według wartości w danej kolumnie:
 ```sql
 SELECT kraj, COUNT(*) FROM klienci GROUP BY kraj;
 Wyświetli liczbę klientów dla każdego kraju w tabeli klienci.
@@ -142,14 +142,14 @@ Wyświetli liczbę klientów dla każdego kraju w tabeli klienci.
 
 <br><br>
 
-HAVING - pozwala na filtrowanie wyników po wykonaniu grupowania za pomocą GROUP BY:
+4. HAVING - pozwala na filtrowanie wyników po wykonaniu grupowania za pomocą GROUP BY:
 ```sql
 SELECT kraj, COUNT(*) FROM klienci GROUP BY kraj HAVING COUNT(*) > 100;
 Wyświetli kraje, w których jest więcej niż 100 klientów w tabeli klienci.
 ```
 <br><br>
 
-CASE - pozwala na wykonanie warunkowego działania w zależności od wartości kolumny:
+5. CASE - pozwala na wykonanie warunkowego działania w zależności od wartości kolumny:
 ```sql
 SELECT nazwa,
 CASE
@@ -159,4 +159,42 @@ CASE
 END AS 'Cena'
 FROM produkty;
 Wyświetli nazwy produktów z dodatkową kolumną Cena, która określa, czy produkt jest tani, średni czy drogi na podstawie wartości kolumny cena w tabeli produkty.
+```
+
+6. JOIN - pozwala na łączenie wyników z dwóch lub więcej tabel według warunków:
+```sql
+SELECT k.nazwa AS 'Kategoria', p.nazwa AS 'Produkt'
+FROM kategorie k
+JOIN produkty p ON k.id = p.kategoria_id;
+Wyświetli nazwy kategorii i produktów, gdzie produkty należą do odpowiedniej kategorii, korzystając z kolumny id w tabeli kategorie i kolumny kategoria_id w tabeli produkty.
+```
+
+<br><br>
+
+7. EXISTS - pozwala na sprawdzenie, czy podzapytanie zwraca wynik, a następnie wykonanie akcji:
+```sql
+SELECT nazwa FROM produkty WHERE EXISTS (SELECT * FROM zamowienia WHERE produkty.id = zamowienia.produkt_id);
+Wyświetli nazwy produktów, które występują w tabeli zamowienia na podstawie wartości kolumny produkt_id i są dostępne w tabeli produkty.
+```
+
+<br><br>
+
+8. COALESCE - pozwala na wybór pierwszej wartości nie będącej NULL wśród kilku wartości:
+```sql
+SELECT COALESCE(nazwa, 'Brak nazwy') AS 'Nazwa' FROM produkty;
+Wyświetli nazwy produktów z tabeli produkty, a jeśli nazwa produktu jest NULL, wyświetli tekst "Brak nazwy".
+```
+
+<br><br>
+
+9. DATE - pozwala na formatowanie i konwertowanie dat:
+```sql
+SELECT DATE_FORMAT(data, '%d-%m-%Y') AS 'Data' FROM zamowienia;
+Wyświetli daty w tabeli zamowienia sformatowane jako dzień-miesiąc-rok.
+```
+<br><br>
+
+10. TRUNCATE - pozwala na usuwanie wszystkich rekordów z tabeli, ale zachowując strukturę tabeli:
+STRUNCATE TABLE zamowienia;
+Usunie wszystkie rekordy z tabeli zamowienia, ale zachowa strukturę tabeli. Uwaga: to polecenie nie może zostać wycofane.
 ```
