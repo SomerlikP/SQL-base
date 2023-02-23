@@ -107,6 +107,7 @@ alter table TABLE_NAME drop;
 <br><br>
 
 Reset ID:
+---
 ```sql
 1. ALTER TABLE nazwaTablei MODIFY COLUMN id INT NOT NULL;
 2. SET @counter = 0; UPDATE nazwaTabeli SET id = (@counter:=@counter+1);
