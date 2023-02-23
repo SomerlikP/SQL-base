@@ -99,14 +99,14 @@ alter table TABLE_NAME add COLUMN_NAME DATA_TYPE;
 
 <br><br>
 
-usuwanie tabeli:
+Usuwanie tabeli:
 ```sql
 alter table TABLE_NAME drop;
 ```
 
 <br><br>
 
-reset ID:
+Reset ID:
 ```sql
 1. ALTER TABLE nazwaTablei MODIFY COLUMN id INT NOT NULL;
 2. SET @counter = 0; UPDATE nazwaTabeli SET id = (@counter:=@counter+1);
