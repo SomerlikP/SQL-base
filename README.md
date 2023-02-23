@@ -140,7 +140,7 @@ SELECT kraj, COUNT(*) FROM klienci GROUP BY kraj;
 Wyświetli liczbę klientów dla każdego kraju w tabeli klienci.
 ```
 
-<br><br>
+<br>
 
 4. HAVING - pozwala na filtrowanie wyników po wykonaniu grupowania za pomocą GROUP BY:
 ```sql
