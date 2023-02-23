@@ -126,7 +126,9 @@ Wyświetli unikalne wartości kolumny kraj z tabeli klienci.
 
 UNION - pozwala połączyć wyniki z kilku zapytań w jedną tabelę:
 ```sql
-SELECT nazwisko FROM pracownicy UNION SELECT nazwisko FROM klienci;
+SELECT nazwisko FROM pracownicy
+UNION
+SELECT nazwisko FROM klienci;
 Wyświetli nazwiska pracowników i klientów w jednej kolumnie.
 ```
 
