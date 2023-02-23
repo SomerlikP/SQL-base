@@ -129,3 +129,32 @@ UNION - pozwala połączyć wyniki z kilku zapytań w jedną tabelę:
 SELECT nazwisko FROM pracownicy UNION SELECT nazwisko FROM klienci;
 Wyświetli nazwiska pracowników i klientów w jednej kolumnie.
 ```
+
+<br><br>
+
+GROUP BY - pozwala grupować wyniki według wartości w danej kolumnie:
+```sql
+SELECT kraj, COUNT(*) FROM klienci GROUP BY kraj;
+Wyświetli liczbę klientów dla każdego kraju w tabeli klienci.
+```
+
+<br><br>
+
+HAVING - pozwala na filtrowanie wyników po wykonaniu grupowania za pomocą GROUP BY:
+```sql
+SELECT kraj, COUNT(*) FROM klienci GROUP BY kraj HAVING COUNT(*) > 100;
+Wyświetli kraje, w których jest więcej niż 100 klientów w tabeli klienci.
+```
+<br><br>
+
+CASE - pozwala na wykonanie warunkowego działania w zależności od wartości kolumny:
+```sql
+SELECT nazwa,
+CASE
+  WHEN cena < 10 THEN 'Tani'
+  WHEN cena >= 10 AND cena < 50 THEN 'Średni'
+  ELSE 'Drogi'
+END AS 'Cena'
+FROM produkty;
+Wyświetli nazwy produktów z dodatkową kolumną Cena, która określa, czy produkt jest tani, średni czy drogi na podstawie wartości kolumny cena w tabeli produkty.
+```
