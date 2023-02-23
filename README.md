@@ -3,42 +3,42 @@ Logowanie do Shell'a:
 mysql -u root
 ```
 
-<br>
+<br><br>
 
 Utworzenie bazy danych:
 ```sql
 create database DATABASE_NAME;
 ```
 
-<br>
+<br><br>
 
 Użycie bazy danych:
 ```sql
 use DATABASE_NAME;
 ```
 
-<br>
+<br><br>
 
 Utworzenie tabeli:
 ```sql
 create table TABLE_NAME(id int AUTO_INCREMENT PRIMARY KEY, WARTOŚĆ1 TYPDANYCH(45));
 ```
 
-<br>
+<br><br>
 
 Wyświetlenie tabeli:
 ```sql
 show tables;
 ```
 
-<br>
+<br><br>
 
 Wyświetlanie kolumn:
 ```sql
 show columns from TABLE_NAME;
 ```
 
-<br>
+<br><br>
 
 Wprowadzenie danych do tabeli:
 ```sql
@@ -53,7 +53,7 @@ insert into TABLE_NAME(WARTOŚĆ1, WARTOŚĆ2) values ("dane1","dane2")
 ```
 > Dzięki tej wersji nie trzeba wpisywać ID ponieważ jest `AUTO_INCREMENT`
 
-<br>
+<br><br>
 
 Aktualizowanie danych:
 ```sql
@@ -69,42 +69,42 @@ select * from TABLE_NAME where WARTOŚĆ1 LIKE "X%";
 ```
 > Przykład imienia: Gdy WARTOŚĆ1 jest imieniem, X zastąpić 1 literą imienia
 
-<br>
+<br><br>
 
 Srednia sprzedaz:
 ```sql
 select avg(rekord_z_tabeli) from tabela;
 ```
 
-<br>
+<br><br>
 
 Usuwanie tabeli:
 ```sql
 drop table TABLE_NAME;
 ```
 
-<br>
+<br><br>
 
 Usuwanie bazy danych:
 ```sql
 drop database DATABASE_NAME;
 ```
 
-<br>
+<br><br>
 
 Dodawanie tabeli:
 ```sql
 alter table TABLE_NAME add COLUMN_NAME DATA_TYPE;
 ```
 
-<br>
+<br><br>
 
 usuwanie tabeli:
 ```sql
 alter table TABLE_NAME drop;
 ```
 
-<br>
+<br><br>
 
 reset ID:
 ```sql
