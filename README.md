@@ -82,6 +82,10 @@ usuwanie tabeli:
 alter table TABLE_NAME drop;
 ```
 
-
-
-LINK - http://www.galaxy.agh.edu.pl/~pamalino/programowanie/mysql/index.php
+reset ID:
+```sql
+1. ALTER TABLE nazwaTablei MODIFY COLUMN id INT NOT NULL;
+2. SET @counter = 0;
+UPDATE nazwaTabeli SET id = (@counter:=@counter+1);
+3. ALTER TABLE nazwaTablei MODIFY COLUMN id INT NOT NULL AUTO_INCREMENT;
+```
