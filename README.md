@@ -7,49 +7,49 @@ mysql -u root
 
 Utworzenie bazy danych:
 ```sql
-create database DATABASE_NAME;
+CREATE DATABASE DATABASE_NAME;
 ```
 
 <br><br>
 
 Użycie bazy danych:
 ```sql
-use DATABASE_NAME;
+USE DATABASE_NAME;
 ```
 
 <br><br>
 
 Utworzenie tabeli:
 ```sql
-create table TABLE_NAME(id int AUTO_INCREMENT PRIMARY KEY, WARTOŚĆ1 TYPDANYCH(45));
+CREATE TABLE TABLE_NAME(id int AUTO_INCREMENT PRIMARY KEY, WARTOŚĆ1 TYPDANYCH(45));
 ```
 
 <br><br>
 
 Wyświetlenie tabeli:
 ```sql
-show tables;
+SHOW TABLES;
 ```
 
 <br><br>
 
 Wyświetlanie kolumn:
 ```sql
-show columns from TABLE_NAME;
+SHOW COLUMNS FROM TABLE_NAME;
 ```
 
 <br><br>
 
 Wprowadzenie danych do tabeli:
 ```sql
-insert into TABLE_NAME values(null, WARTOŚĆ1, WARTOŚĆ2, WARTOŚĆ3);
+INSERT INTO TABLE_NAME VALUES(null, WARTOŚĆ1, WARTOŚĆ2, WARTOŚĆ3);
 ```
 > Wprowadzanie danych według kolejnych wartości wprowadzonych w tabeli
 
 LUB
 
 ```sql
-insert into TABLE_NAME(WARTOŚĆ1, WARTOŚĆ2) values ("dane1","dane2")
+INSERT INTO TABLE_NAME(WARTOŚĆ1, WARTOŚĆ2) VALUES ("dane1","dane2")
 ```
 > Dzięki tej wersji nie trzeba wpisywać ID ponieważ jest `AUTO_INCREMENT`
 
@@ -57,7 +57,7 @@ insert into TABLE_NAME(WARTOŚĆ1, WARTOŚĆ2) values ("dane1","dane2")
 
 Aktualizowanie danych:
 ```sql
-update TABLE_NAME set WARTOŚĆ1=X where id=Y;
+UPDATE TABLE_NAME SET WARTOŚĆ1=X WHERE id=Y;
 ```
 > X - wartość którą chcemy dodać, Y - wartość dla którego id chcemy zmienić
 
@@ -65,7 +65,7 @@ update TABLE_NAME set WARTOŚĆ1=X where id=Y;
 
 Wyszukiwanie danych:
 ```sql
-select * from TABLE_NAME where WARTOŚĆ1 LIKE "X%";
+SELECT * FROM TABLE_NAME WHERE WARTOŚĆ1 LIKE "X%";
 ```
 > Przykład imienia: Gdy WARTOŚĆ1 jest imieniem, X zastąpić 1 literą imienia
 
@@ -73,35 +73,35 @@ select * from TABLE_NAME where WARTOŚĆ1 LIKE "X%";
 
 Srednia sprzedaz:
 ```sql
-select avg(rekord_z_tabeli) from tabela;
+SELECT AVG(rekord_z_tabeli) FROM tabela;
 ```
 
 <br><br>
 
 Usuwanie tabeli:
 ```sql
-drop table TABLE_NAME;
+DROP TABLE TABLE_NAME;
 ```
 
 <br><br>
 
 Usuwanie bazy danych:
 ```sql
-drop database DATABASE_NAME;
+DROP DATABASE DATABASE_NAME;
 ```
 
 <br><br>
 
 Dodawanie tabeli:
 ```sql
-alter table TABLE_NAME add COLUMN_NAME DATA_TYPE;
+ALTER TABLE TABLE_NAME ADD COLUMN_NAME DATA_TYPE;
 ```
 
 <br><br>
 
 Usuwanie tabeli:
 ```sql
-alter table TABLE_NAME drop;
+ALTER TABLE TABLE_NAME DROP;
 ```
 
 <br><br>
