@@ -85,7 +85,6 @@ alter table TABLE_NAME drop;
 reset ID:
 ```sql
 1. ALTER TABLE nazwaTablei MODIFY COLUMN id INT NOT NULL;
-2. SET @counter = 0;
-UPDATE nazwaTabeli SET id = (@counter:=@counter+1);
+2. SET @counter = 0; UPDATE nazwaTabeli SET id = (@counter:=@counter+1);
 3. ALTER TABLE nazwaTablei MODIFY COLUMN id INT NOT NULL AUTO_INCREMENT;
 ```
